@@ -1,35 +1,80 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHome, faUsers, faSave, faChartBar, faEnvelope, faClock  } from "@fortawesome/free-solid-svg-icons"; // Importa todos los íconos necesarios aquí
+import "./App.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Table } from 'react-bootstrap';
 
-function App() {
-  const [count, setCount] = useState(0)
-
+const App = () => {
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+      <div className="container">
+        <div className="cont">
+          <div className="sidebar">
+            <div className="logo">Logo</div>
+            <ul className="menu">
+                <li className="home"><FontAwesomeIcon icon={faHome} /> </li>
+                <li className="bar"><FontAwesomeIcon icon={faChartBar} /> </li>
+                 <li className="user"><FontAwesomeIcon icon={faUsers} /> </li>
+                <li className="save"><FontAwesomeIcon icon={faSave} /> </li>
+              </ul>
+          </div>
+        </div>
 
-export default App
+          <div class="grid-container">
+            <div class="grid-item">
+              <div class="grid-item-content">
+                <div>
+                  <div>
+                  <span class="item-label">Usuarios</span>
+                  </div>
+                  <div>
+                    <li className="user1"><FontAwesomeIcon icon={faUsers} /> </li>
+                  </div>
+                </div>
+                <div>
+                  <span class="item-value">94</span>
+                </div>
+              </div>
+            </div>
+            <div class="grid-item">
+              <div class="grid-item-content">
+              <div>
+                  <div>
+                  <span class="item-label">Solicitudes</span>
+                  </div>
+                  <div>
+                    <li className="user1"><FontAwesomeIcon icon={faEnvelope} /> </li>
+                  </div>
+                </div>
+                <div>
+                  <span class="item-value">94</span>
+                </div>
+              </div>
+            </div>
+            <div class="grid-item">
+              <div class="grid-item-content">
+              <div>
+                  <div>
+                  <span class="item-label">Solcitudes Activadas</span>
+                  </div>
+                  <div>
+                    <li className="user1"><FontAwesomeIcon icon={faClock} /> </li>
+                  </div>
+                </div>
+                <div>
+                  <span class="item-value">94</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="grid-content">
+          <p>Solicitudes Activass</p>
+          </div>
+
+
+
+      </div>
+  );
+};
+
+export default App;

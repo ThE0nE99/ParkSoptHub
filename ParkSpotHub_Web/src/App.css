@@ -1,42 +1,108 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.container{
+  display: flex;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 10px 20px 300px; /* Define el ancho de cada columna */
+}
+
+.sidebar {
+  width: 150px;
+  height: 100vh;
+  background-color: #bc1414;
+  color: #fff;
+  padding: 20px;
+  box-sizing: border-box;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+
+.menu li .svg-inline--fa {
+  font-size: 35px;
+  margin-right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40px;
 }
 
 .logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.menu {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.menu li {
+  margin-bottom: 10px;
 }
 
-.card {
-  padding: 2em;
+.content {
+  flex: 1;
+  padding: 20px;
+  background-color: #f4f4f4;
 }
 
-.read-the-docs {
-  color: #888;
+.content h1 {
+  margin-top: 0;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.grid-item {
+  background-color: #f0f0f0;
+  padding: 0.5rem;
+  left: 100px;
+  align-items: stretch;
+  justify-content: space-between;
+  max-height: 80px;
+  border-radius: 10px;
+}
+
+.item-label {
+  color: #999999;
+}
+
+.item-value {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-weight: bold;
+}
+
+/* Estilos específicos para la tabla de React Bootstrap */
+.react-bootstrap-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.react-bootstrap-table th,
+.react-bootstrap-table td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.react-bootstrap-table tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.react-bootstrap-table td:first-child {
+  font-weight: bold;
 }
