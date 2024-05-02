@@ -1,11 +1,11 @@
 import Sidebar from './components/Sidebar'
 
-function App() {
+function Home() {
   return (
-    <main className='flex'>
+    <div className='flex'>
         <Sidebar />
-    </main>
+    </div>
   )
 }
 
-export default App
+export default Home
