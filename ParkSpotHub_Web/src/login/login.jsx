@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import app from '../firebase.config';
+import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 
-function App() {
+function Login() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
@@ -15,9 +17,20 @@ function App() {
   const handleSubmit = (e) => {
     e.preventDefault();
     // Aquí puedes agregar la lógica para enviar los datos al servidor
-    console.log('Usuario:', username);
-    console.log('Contraseña:', password);
-    window.location.href = "/home";
+    const auth = getAuth(app);
+    try {
+      if (!username || !password) {
+        alert("Por favor, ingresa un correo electrónico y una contraseña.");
+        return;
+      }else if (signInWithEmailAndPassword(auth, username, password)){
+        window.location.href = "/home";
+      }else {
+        alert("Error al iniciar sesión. Por favor, verifica tu correo electrónico y contraseña.");
+      }
+      
+    } catch (error) {
+      alert("Error Inesperado");
+    }
   };
 
   return (
@@ -64,4 +77,4 @@ function App() {
   );
 }
 
-export default App;
+export default Login;

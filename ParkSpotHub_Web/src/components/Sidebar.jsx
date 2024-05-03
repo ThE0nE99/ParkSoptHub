@@ -1,7 +1,9 @@
 import React from 'react';
+import { getAuth, signOut } from 'firebase/auth';
 import { RiBarChart2Fill, RiTeamFill, RiParkingFill, RiBookmark3Fill, RiLogoutBoxLine, RiDashboardLine } from '@remixicon/react';
 
 const Sidebar = () => {
+  const auth = getAuth();
   return (
     <div className="bg-red-700 text-white flex flex-col items-center p-4 h-screen">
       <div className="mb-8">
@@ -42,7 +44,9 @@ const Sidebar = () => {
             size={42}
             color='black'
             //OnClick cambiar de pagina href="/login"
-            onClick= {()=>{window.location.href = "/";}}
+            onClick= {()=> {
+              signOut(auth)
+              window.location.href = "/";}}
           />
         </div>
       </div>
